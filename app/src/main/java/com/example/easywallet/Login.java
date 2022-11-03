@@ -12,7 +12,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,10 +22,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
-  EditText mEmail,mPassword;
-  Button mLoginBtn,mRegisterbtn,mResetbtn;
-//  TextView mCreateBtn;
-  FirebaseAuth fAuth;
+    EditText mEmail,mPassword;
+    Button mLoginBtn,mRegisterbtn,mResetbtn;
+    //TextView mCreateBtn;
+    FirebaseAuth fAuth;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -112,5 +111,4 @@ public class Login extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),Register.class));
         finish();
     }
-
 }

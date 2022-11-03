@@ -1,62 +1,33 @@
 {
   "project_info": {
-    "project_number": "69220492407",
-    "project_id": "easy-wallet-ded1c",
-    "storage_bucket": "easy-wallet-ded1c.appspot.com"
+    "project_number": "1097951821799",
+    "project_id": "webodroid-a22cc",
+    "storage_bucket": "webodroid-a22cc.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:69220492407:android:fff8e8d939327c223d1272",
-        "android_client_info": {
-          "package_name": "com.example.easy_wallet"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "69220492407-kr8ivinja4akr025avuvejue0583drr8.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBHDmSO2XweVdX_ncseayLatoZZZ5EDHHc"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "69220492407-kr8ivinja4akr025avuvejue0583drr8.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:69220492407:android:1db9247cb1ba79dc3d1272",
+        "mobilesdk_app_id": "1:1097951821799:android:7c8b3d34c49239dc1ac742",
         "android_client_info": {
           "package_name": "com.example.easywallet"
         }
       },
       "oauth_client": [
         {
-          "client_id": "69220492407-kr8ivinja4akr025avuvejue0583drr8.apps.googleusercontent.com",
+          "client_id": "1097951821799-rn2657tppum2s3kikpluovu9d5uuem7c.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBHDmSO2XweVdX_ncseayLatoZZZ5EDHHc"
+          "current_key": "AIzaSyDPc31I7p3MJvyR8zsJe04pVZG5HJcPzJw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "69220492407-kr8ivinja4akr025avuvejue0583drr8.apps.googleusercontent.com",
+              "client_id": "1097951821799-rn2657tppum2s3kikpluovu9d5uuem7c.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

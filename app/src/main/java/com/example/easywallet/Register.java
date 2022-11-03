@@ -3,6 +3,7 @@ package com.example.easywallet;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,52 +22,52 @@ public class Register extends AppCompatActivity {
     Button mRegisterButton;
     FirebaseAuth fAuth;
 
-        //@SuppressLint("MissingInflatedId")
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_register);
+    @SuppressLint("MissingInflatedId")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_register);
 
-            myname = findViewById(R.id.editTextTextPersonName);
-            myemail = findViewById(R.id.email);
-            mypassword = findViewById(R.id.password);
-            myphoneno = findViewById(R.id.editTextTextPersonName4);
-            mRegisterButton = findViewById(R.id.loginbtn);
+        myname = findViewById(R.id.editTextTextPersonName);
+        myemail = findViewById(R.id.email);
+        mypassword = findViewById(R.id.password);
+        myphoneno = findViewById(R.id.editTextTextPersonName4);
+        mRegisterButton = findViewById(R.id.loginbtn);
 
-            fAuth = FirebaseAuth.getInstance();
-            if (fAuth.getCurrentUser() != null) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                finish();
-            }
-            mRegisterButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    String email = myemail.getText().toString().trim();
-                    String password = mypassword.getText().toString().trim();
-
-                    if (TextUtils.isEmpty(password)) {
-                        mypassword.setError("Password is required");
-                    }
-                    if (TextUtils.isEmpty(email)) {
-                        myemail.setError("Email is required");
-                    }
-                    if (password.length() < 6) {
-                        mypassword.setError("Password must be >= 6 character");
-                    }
-
-                    //register user in firebase
-                    fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                            } else {
-                                Toast.makeText(Register.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                }
-            });
+        fAuth = FirebaseAuth.getInstance();
+        if (fAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
         }
+        mRegisterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = myemail.getText().toString().trim();
+                String password = mypassword.getText().toString().trim();
+
+                if (TextUtils.isEmpty(password)) {
+                    mypassword.setError("Password is required");
+                }
+                if (TextUtils.isEmpty(email)) {
+                    myemail.setError("Email is required");
+                }
+                if (password.length() < 6) {
+                    mypassword.setError("Password must be >= 6 character");
+                }
+
+                //register user in firebase
+                fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        } else {
+                            Toast.makeText(Register.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        });
+    }
 }
